@@ -1,0 +1,19 @@
+name: Publish to Nexus Repository Manager
+
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    # - uses: actions/checkout@v2
+
+    - name: Build artifact
+      run: |
+        echo "This is a sample artifact" > artifact.txt
+
+    - name: Upload artifact to Nexus
+      run: |
+        curl -v -k -u admin:admin123 \
+        --upload-file artifact.txt \
+        "https://localhost:8081/repository/your-repository/path/to/artifact.txt"
