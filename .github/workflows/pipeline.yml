@@ -16,4 +16,4 @@ jobs:
       run: |
         curl -v -k -u admin:admin123 \
         --upload-file artifact.txt \
-        "https://localhost:8081/repository/your-repository/path/to/artifact.txt"
+        "https://localhost:8081/repository/raw-hosted/path/to/artifact.txt"
